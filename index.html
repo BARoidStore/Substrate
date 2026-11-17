@@ -3,56 +3,99 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BARoid - Media Tanam Premium</title>
+<title>BOTANICA - Media Tanam Premium</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
-body{background:#f6fbf4;color:#1a2e1a}
-header{background:#0f2a12;color:#fff;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
-.logo{font-size:28px;font-weight:900}.logo span{color:#7ed957}
-nav a{color:#fff;text-decoration:none;margin:0 8px;font-weight:600;font-size:14px}
-.cart-btn{background:#7ed957;color:#0f2a12;border:none;padding:10px 16px;border-radius:999px;font-weight:800;cursor:pointer}
-.hero{background:linear-gradient(rgba(0,0,0,.55),rgba(15,42,18,.85)),url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=1200&q=80');background-size:cover;background-position:center;color:#fff;padding:70px 20px;text-align:center}
-.hero h1{font-size:40px;line-height:1.15}.hero h1 span{color:#7ed957}
-.hero p{margin:16px auto;max-width:650px;opacity:.95;line-height:1.6}
-.hero-btn{background:#ffb020;color:#111;padding:14px 28px;border-radius:999px;display:inline-block;font-weight:900;text-decoration:none;margin:8px 5px}
-.bio{max-width:900px;margin:30px auto;padding:0 20px;text-align:center;line-height:1.7}.bio h2{font-size:28px;margin-bottom:10px}
-.section{max-width:1100px;margin:20px auto;padding:0 20px}.section h2{text-align:center;font-size:32px}.section>p{text-align:center;margin:8px 0 25px;opacity:.7}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08)}
-.card img{width:100%;height:320px;object-fit:cover;background:#e8f3e2}
-.card-body{padding:20px}.badge{display:inline-block;background:#e8f9e0;color:#2a6b1a;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:800}
-.card-body h3{font-size:22px;margin:10px 0 6px}.card-body ul{margin:10px 0 10px 18px;line-height:1.6;font-size:14px;color:#444}
-.price{font-size:26px;font-weight:900;color:#1e5a26}.price small{font-size:13px;color:#777}
-.qty{display:flex;gap:10px;align-items:center;margin:14px 0}.qty button{width:32px;height:32px;border-radius:50%;border:1px solid #ddd;background:#fff;font-size:18px;cursor:pointer}
-.add{width:100%;background:#0f2a12;color:#fff;border:none;padding:13px;border-radius:12px;font-weight:800;cursor:pointer;font-size:15px}
-.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin:30px 0}.why div{background:#fff;padding:20px;border-radius:16px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,.05)}
-footer{background:#0f2a12;color:#fff;text-align:center;padding:30px 20px;margin-top:40px;line-height:1.7}footer a{color:#7ed957;font-weight:800;text-decoration:none}
-.cart-drawer{position:fixed;right:0;top:0;width:360px;max-width:92vw;height:100%;background:#fff;box-shadow:-10px 0 30px rgba(0,0,0,.2);padding:20px;transform:translateX(110%);transition:.3s;z-index:99;overflow:auto}.cart-drawer.open{transform:none}
-.cart-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee;font-size:14px}.total{font-size:22px;font-weight:900;margin:15px 0}
-.wa-btn{display:block;background:#25D366;color:#fff;text-align:center;padding:15px;border-radius:12px;font-weight:900;text-decoration:none}.close{float:right;border:none;background:none;font-size:22px;cursor:pointer}
-.wa-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:14px 20px;border-radius:999px;font-weight:900;text-decoration:none;box-shadow:0 10px 25px rgba(0,0,0,.3);z-index:100;font-size:15px}
-@media(max-width:600px){.hero h1{font-size:32px}nav{display:none}}
+body{background:#f6f8f3;color:#222}
+header{background:#1a3c1a;color:white;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+header h1{font-size:24px;letter-spacing:2px}
+header h1 span{color:#a8d86d}
+header a{background:#a8d86d;color:#1a3c1a;padding:8px 16px;border-radius:20px;text-decoration:none;font-weight:bold;font-size:14px}
+.hero{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('HIAS.JPG.jpeg');background-size:cover;background-position:center;color:white;text-align:center;padding:70px 20px}
+.hero h2{font-size:36px;margin-bottom:10px}
+.hero p{font-size:16px;max-width:600px;margin:0 auto 20px}
+.hero a{background:#a8d86d;color:#1a3c1a;padding:12px 28px;border-radius:25px;text-decoration:none;font-weight:bold;display:inline-block}
+.section{padding:35px 20px;max-width:1000px;margin:auto}
+.section h2{text-align:center;margin-bottom:5px;font-size:26px;color:#1a3c1a}
+.section p.sub{text-align:center;color:#666;margin-bottom:25px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+.card img{width:100%;height:260px;object-fit:cover}
+.card-body{padding:18px}
+.card-body h3{font-size:19px;margin-bottom:6px}
+.card-body p{font-size:14px;color:#555;line-height:1.5;margin-bottom:12px}
+.price{font-size:20px;font-weight:bold;color:#1a3c1a}
+.price small{font-size:13px;color:#888;text-decoration:line-through;margin-left:6px}
+.btn{display:block;text-align:center;background:#25D366;color:white;padding:12px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:12px}
+.why{background:#1a3c1a;color:white;border-radius:16px;padding:25px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;text-align:center}
+.why div b{font-size:18px;color:#a8d86d;display:block;margin-bottom:5px}
+.why div{font-size:14px;line-height:1.5}
+footer{background:#111;color:#aaa;text-align:center;padding:20px;font-size:13px}
 </style>
 </head>
 <body>
-<header><div class="logo">BA<span>Roid</span></div><nav><a href="#produk">Produk</a><a href="#tentang">Tentang</a></nav><button class="cart-btn" onclick="toggleCart()">🛒 Keranjang (<span id="cartCount">0</span>)</button></header>
-<div class="hero"><h1>Media Tanam Premium.<br><span>Tanaman Auto Subur.</span></h1><p>BARoid diracik khusus untuk pecinta tanaman. Poros, kaya nutrisi, siap pakai. Tanpa ribet campur-campur lagi, tinggal tuang, tanaman langsung happy.</p><a class="hero-btn" href="#produk">Lihat Produk ↓</a></div>
-<div class="bio" id="tentang"><h2>🌱 Tentang BARoid</h2><p><b>BARoid</b> adalah media tanam premium untuk hias, buah, dan sayur. Kami percaya tanaman sehat berawal dari media yang tepat — tidak terlalu padat, tidak becek, tapi tetap menyimpan nutrisi.</p><p style="margin-top:10px">Setiap kemasan <b>5 KG</b> sudah siap pakai. Cocok untuk pemula sampai kolektor seperti Philodendron, Monstera, Aglaonema, tanaman buah dalam pot, sampai sayur di pekarangan rumah.</p></div>
-<div class="section" id="produk"><h2>Produk Kami</h2><p>Semua 5 KG • Siap Pakai • Langsung Kirim</p><div class="grid">
-<div class="card"><img src="hias.jpg" alt="Media Tanam Hias BARoid"><div class="card-body"><span class="badge">BEST SELLER • HIAS</span><h3>Media Tanam Hias</h3><p style="font-size:14px;color:#555">Untuk Philodendron, Monstera, Aglaonema, Alocasia & tanaman hias daun.</p><ul><li>Sekam Bakar</li><li>Perlite</li><li>Pakis Cacah</li><li>Andam</li></ul><div class="price">Rp 25.000 <small>/ 5 KG</small></div><div class="qty"><button onclick="changeQty('hias',-1)">-</button><span id="qty-hias">1</span><button onclick="changeQty('hias',1)">+</button></div><button class="add" onclick="addToCart('hias')">+ Masukin Keranjang</button></div></div>
-<div class="card"><img src="buah.jpg" alt="Media Tanam Buah BARoid"><div class="card-body"><span class="badge" style="background:#ffeed6;color:#9a4a00">BUAH</span><h3>Media Tanam Buah</h3><p style="font-size:14px;color:#555">Untuk tabulampot, jambu, jeruk, mangga, anggur & tanaman buah lainnya.</p><ul><li>Sekam Bakar</li><li>Pupuk Kandang</li><li>Humus</li></ul><div class="price">Rp 20.000 <small>/ 5 KG</small></div><div class="qty"><button onclick="changeQty('buah',-1)">-</button><span id="qty-buah">1</span><button onclick="changeQty('buah',1)">+</button></div><button class="add" onclick="addToCart('buah')">+ Masukin Keranjang</button></div></div>
-<div class="card"><img src="sayur.jpg" alt="Media Tanam Sayur BARoid"><div class="card-body"><span class="badge">SAYUR • HEMAT</span><h3>Media Tanam Sayur</h3><p style="font-size:14px;color:#555">Untuk cabai, tomat, kangkung, bayam, selada & sayur pekarangan.</p><ul><li>Top Soil</li><li>Sekam Bakar</li><li>Pupuk Kandang</li></ul><div class="price">Rp 15.000 <small>/ 5 KG</small></div><div class="qty"><button onclick="changeQty('sayur',-1)">-</button><span id="qty-sayur">1</span><button onclick="changeQty('sayur',1)">+</button></div><button class="add" onclick="addToCart('sayur')">+ Masukin Keranjang</button></div></div>
-</div><div class="why"><div>✅<br><strong>Siap Pakai</strong><br>Tinggal tuang, langsung tanam</div><div>🌿<br><strong>Poros & Gembur</strong><br>Akar sehat, anti busuk akar</div><div>💪<br><strong>Kaya Nutrisi</strong><br>Daun lebat, buah lebat</div><div>📦<br><strong>5 KG Pas</strong><br>Pas buat 2-3 pot ukuran sedang</div></div></div>
-<div class="cart-drawer" id="cartDrawer"><button class="close" onclick="toggleCart()">✕</button><h2>Keranjang Kamu</h2><div id="cartItems" style="margin-top:15px"><p style="opacity:.6">Keranjang masih kosong met, pilih dulu yuk.</p></div><div class="total" id="cartTotal"></div><a class="wa-btn" id="waBtn" href="#" target="_blank" style="display:none">Pesan Lewat WA →</a><p style="font-size:12px;margin-top:10px;opacity:.6">Klik tombol di atas, pesanan otomatis masuk ke WhatsApp BARoid.</p></div>
-<a class="wa-float" href="https://wa.me/6281285504053?text=Halo%20BARoid!%20Saya%20mau%20pesan%20media%20tanam." target="_blank">💬 Pesan Lewat WA</a>
-<footer><h2 style="font-size:26px">BA<span style="color:#7ed957">Roid</span></h2><p>Media Tanam Premium • Hias • Buah • Sayur<br>Bogor, Jawa Barat - Indonesia</p><p style="margin-top:10px">Order via WhatsApp: <a href="https://wa.me/6281285504053">0812-8550-4053</a></p><p style="opacity:.6;font-size:13px;margin-top:10px">© 2026 BARoid. Tanam Hari Ini, Panen Bahagia Nanti.</p></footer>
-<script>
-const products={hias:{name:"Media Tanam Hias",price:25000,qty:1},buah:{name:"Media Tanam Buah",price:20000,qty:1},sayur:{name:"Media Tanam Sayur",price:15000,qty:1}};
-let cart={};
-function changeQty(id,d){products[id].qty=Math.max(1,products[id].qty+d);document.getElementById('qty-'+id).innerText=products[id].qty;}
-function addToCart(id){cart[id]=(cart[id]||0)+products[id].qty;renderCart();toggleCart(true);}
-function renderCart(){let html="",total=0,count=0,msg="Halo BARoid! Saya mau pesan:%0A%0A";for(let id in cart){let p=products[id],sub=p.price*cart[id];total+=sub;count+=cart[id];html+=`<div class="cart-item"><span>${p.name} x ${cart[id]}</span><b>Rp ${sub.toLocaleString('id-ID')}</b></div>`;msg+=`- ${p.name} x ${cart[id]} = Rp ${sub.toLocaleString('id-ID')}%0A`;}if(count===0)html=`<p style="opacity:.6">Keranjang masih kosong met.</p>`;document.getElementById('cartItems').innerHTML=html;document.getElementById('cartCount').innerText=count;document.getElementById('cartTotal').innerText=count?`Total: Rp ${total.toLocaleString('id-ID')}`:"";let wa=document.getElementById('waBtn');if(count){wa.style.display='block';msg+=`%0ATotal: Rp ${total.toLocaleString('id-ID')}%0A%0AAlamat saya:`;wa.href=`https://wa.me/6281285504053?text=${msg}`;}else wa.style.display='none';}
-function toggleCart(open){let d=document.getElementById('cartDrawer');if(open===true)d.classList.add('open');else d.classList.toggle('open');}
-</script>
+
+<header>
+<h1>BOTANICA<span>.</span></h1>
+<a href="https://wa.me/6281234567890">Pesan Sekarang</a>
+</header>
+
+<div class="hero">
+<h2>Media Tanam Premium, Tanaman Jadi Subur!</h2>
+<p>Untuk tanaman hias, buah, dan sayur. Sudah teruji, siap pakai, tidak perlu campur lagi.</p>
+<a href="#produk">Lihat Produk ↓</a>
+</div>
+
+<div class="section" id="produk">
+<h2>Produk Unggulan Kami</h2>
+<p class="sub">Pilih sesuai kebutuhan tanaman kamu</p>
+<div class="grid">
+
+<div class="card">
+<img src="HIAS.JPG.jpeg">
+<div class="card-body">
+<h3>🌿 BOTANICA Hias</h3>
+<p>Untuk Monstera, Aglaonema, Philo, dll. Porous, akar sehat, daun makin rimbun & mengkilap.</p>
+<div class="price">Rp 35.000 <small>Rp 50.000</small></div>
+<a class="btn" href="https://wa.me/6281234567890?text=Halo%20BOTANICA,%20saya%20mau%20pesan%20BOTANICA%20Hias">Pesan Via WA</a>
+</div>
+</div>
+
+<div class="card">
+<img src="BUAH.JPG.jpeg">
+<div class="card-body">
+<h3>🍓 BOTANICA Buah</h3>
+<p>Untuk Anggur, Stroberi, Jambu, dll. Kaya nutrisi, buah lebih manis, lebat, dan tidak mudah rontok.</p>
+<div class="price">Rp 40.000 <small>Rp 55.000</small></div>
+<a class="btn" href="https://wa.me/6281234567890?text=Halo%20BOTANICA,%20saya%20mau%20pesan%20BOTANICA%20Buah">Pesan Via WA</a>
+</div>
+</div>
+
+<div class="card">
+<img src="SAYUR.JPG.jpeg">
+<div class="card-body">
+<h3>🥬 BOTANICA Sayur</h3>
+<p>Untuk Kangkung, Bayam, Cabai, dll. Cepat panen, sayur segar, aman untuk keluarga.</p>
+<div class="price">Rp 30.000 <small>Rp 45.000</small></div>
+<a class="btn" href="https://wa.me/6281234567890?text=Halo%20BOTANICA,%20saya%20mau%20pesan%20BOTANICA%20Sayur">Pesan Via WA</a>
+</div>
+</div>
+
+</div>
+</div>
+
+<div class="section">
+<div class="why">
+<div><b>✅ Siap Pakai</b>Tidak perlu campur pupuk lagi</div>
+<div><b>🚚 Kirim Cepat</b>Se-Jabodetabek & Seluruh Indonesia</div>
+<div><b>🌱 100% Organik</b>Aman untuk tanaman & keluarga</div>
+<div><b>💬 Konsultasi Gratis</b>Dibantu sampai tanaman subur</div>
+</div>
+</div>
+
+<footer>
+<b style="color:white">BOTANICA.</b> - Media Tanam Premium<br>WA: 0812-3456-7890 | Depok, Jawa Barat<br>© 2026 BOTANICA. All Rights Reserved.
+</footer>
+
 </body>
 </html>
