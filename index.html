@@ -8,10 +8,10 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
 body{background:#f6f8f3;color:#222}
 header{background:#1a3c1a;color:white;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
-header h1{font-size:26px;letter-spacing:1px}
+header h1{font-size:26px}
 header h1 span{color:#a8d86d}
 .cart-btn{background:#a8d86d;color:#1a3c1a;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:14px;cursor:pointer;border:none}
-.hero{background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80');background-size:cover;background-position:center;color:white;text-align:center;padding:80px 20px}
+.hero{background:#1a3c1a;background-image:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80');background-size:cover;background-position:center;color:white;text-align:center;padding:80px 20px}
 .hero h2{font-size:36px;margin-bottom:10px}
 .hero p{font-size:16px;max-width:600px;margin:0 auto 20px}
 .hero a{background:#a8d86d;color:#1a3c1a;padding:12px 28px;border-radius:25px;text-decoration:none;font-weight:bold;display:inline-block}
@@ -27,10 +27,14 @@ header h1 span{color:#a8d86d}
 .price{font-size:20px;font-weight:bold;color:#1a3c1a}
 .price small{font-size:13px;color:#888;text-decoration:line-through;margin-left:6px}
 .btn{display:block;text-align:center;background:#1a3c1a;color:white;padding:12px;border-radius:10px;font-weight:bold;margin-top:12px;cursor:pointer;border:none;width:100%;font-size:15px}
-.btn:hover{background:#2a5a2a}
 .why{background:#1a3c1a;color:white;border-radius:16px;padding:25px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;text-align:center}
 .why div b{font-size:18px;color:#a8d86d;display:block;margin-bottom:5px}
 .why div{font-size:14px;line-height:1.5}
+.bio{background:white;border-radius:16px;padding:30px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.08)}
+.bio h2{font-size:24px;color:#1a3c1a;margin-bottom:8px}
+.bio p{color:#555;font-size:15px;line-height:1.7;margin-bottom:18px}
+.btn-wa-big{display:inline-block;background:#25D366;color:white;padding:14px 30px;border-radius:25px;font-weight:bold;text-decoration:none;font-size:16px}
+.btn-wa-big:hover{background:#1da851}
 footer{background:#111;color:#aaa;text-align:center;padding:20px;font-size:13px}
 </style>
 </head>
@@ -94,8 +98,20 @@ footer{background:#111;color:#aaa;text-align:center;padding:20px;font-size:13px}
 </div>
 </div>
 
+<div class="section">
+<div class="bio">
+<h2>📍 BARoid.</h2>
+<p><b>Media Tanam Premium</b><br>
+Bogor, Jawa Barat, Indonesia<br>
+WA: 0812-3456-7890<br>
+Buka Setiap Hari | 08.00 - 21.00 WIB<br>
+Mau tanya-tanya dulu boleh, mau langsung order juga boleh!</p>
+<a class="btn-wa-big" href="https://wa.me/6281234567890?text=Halo%20BARoid!%20Saya%20mau%20pesan%20media%20tanam" target="_blank">💬 Pesan Langsung ke WA</a>
+</div>
+</div>
+
 <footer>
-<b style="color:white">BARoid.</b> - Media Tanam Premium<br>WA: 0812-3456-7890 | Bogor, Jawa Barat<br>© 2026 BARoid. All Rights Reserved.
+<b style="color:white">BARoid.</b> - Media Tanam Premium<br>Bogor, Jawa Barat<br>© 2026 BARoid. All Rights Reserved.
 </footer>
 
 <script>
