@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BOTANICA - Media Tanam Premium</title>
+<title>BARoid - Media Tanam Premium</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
 body{background:#f6f8f3;color:#222}
 header{background:#1a3c1a;color:white;padding:18px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
-header h1{font-size:24px;letter-spacing:2px}
+header h1{font-size:26px;letter-spacing:1px}
 header h1 span{color:#a8d86d}
-header a{background:#a8d86d;color:#1a3c1a;padding:8px 16px;border-radius:20px;text-decoration:none;font-weight:bold;font-size:14px}
-.hero{background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,.55)),url('HIAS.JPG.jpeg');background-size:cover;background-position:center;color:white;text-align:center;padding:70px 20px}
+.cart-btn{background:#a8d86d;color:#1a3c1a;padding:8px 16px;border-radius:20px;font-weight:bold;font-size:14px;cursor:pointer;border:none}
+.hero{background:linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),url('https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&q=80');background-size:cover;background-position:center;color:white;text-align:center;padding:80px 20px}
 .hero h2{font-size:36px;margin-bottom:10px}
 .hero p{font-size:16px;max-width:600px;margin:0 auto 20px}
 .hero a{background:#a8d86d;color:#1a3c1a;padding:12px 28px;border-radius:25px;text-decoration:none;font-weight:bold;display:inline-block}
@@ -26,7 +26,8 @@ header a{background:#a8d86d;color:#1a3c1a;padding:8px 16px;border-radius:20px;te
 .card-body p{font-size:14px;color:#555;line-height:1.5;margin-bottom:12px}
 .price{font-size:20px;font-weight:bold;color:#1a3c1a}
 .price small{font-size:13px;color:#888;text-decoration:line-through;margin-left:6px}
-.btn{display:block;text-align:center;background:#25D366;color:white;padding:12px;border-radius:10px;text-decoration:none;font-weight:bold;margin-top:12px}
+.btn{display:block;text-align:center;background:#1a3c1a;color:white;padding:12px;border-radius:10px;font-weight:bold;margin-top:12px;cursor:pointer;border:none;width:100%;font-size:15px}
+.btn:hover{background:#2a5a2a}
 .why{background:#1a3c1a;color:white;border-radius:16px;padding:25px;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:15px;text-align:center}
 .why div b{font-size:18px;color:#a8d86d;display:block;margin-bottom:5px}
 .why div{font-size:14px;line-height:1.5}
@@ -36,8 +37,8 @@ footer{background:#111;color:#aaa;text-align:center;padding:20px;font-size:13px}
 <body>
 
 <header>
-<h1>BOTANICA<span>.</span></h1>
-<a href="https://wa.me/6281234567890">Pesan Sekarang</a>
+<h1>BARoid<span>.</span></h1>
+<button class="cart-btn" onclick="lihatKeranjang()">🛒 Keranjang (<span id="cartCount">0</span>)</button>
 </header>
 
 <div class="hero">
@@ -54,30 +55,30 @@ footer{background:#111;color:#aaa;text-align:center;padding:20px;font-size:13px}
 <div class="card">
 <img src="HIAS.JPG.jpeg">
 <div class="card-body">
-<h3>🌿 BOTANICA Hias</h3>
+<h3>🌿 BARoid Hias</h3>
 <p>Untuk Monstera, Aglaonema, Philo, dll. Porous, akar sehat, daun makin rimbun & mengkilap.</p>
 <div class="price">Rp 35.000 <small>Rp 50.000</small></div>
-<a class="btn" href="https://wa.me/6281234567890?text=Halo%20BOTANICA,%20saya%20mau%20pesan%20BOTANICA%20Hias">Pesan Via WA</a>
+<button class="btn" onclick="tambahKeranjang('BARoid Hias')">🛒 + Keranjang</button>
 </div>
 </div>
 
 <div class="card">
 <img src="BUAH.JPG.jpeg">
 <div class="card-body">
-<h3>🍓 BOTANICA Buah</h3>
+<h3>🍓 BARoid Buah</h3>
 <p>Untuk Anggur, Stroberi, Jambu, dll. Kaya nutrisi, buah lebih manis, lebat, dan tidak mudah rontok.</p>
 <div class="price">Rp 40.000 <small>Rp 55.000</small></div>
-<a class="btn" href="https://wa.me/6281234567890?text=Halo%20BOTANICA,%20saya%20mau%20pesan%20BOTANICA%20Buah">Pesan Via WA</a>
+<button class="btn" onclick="tambahKeranjang('BARoid Buah')">🛒 + Keranjang</button>
 </div>
 </div>
 
 <div class="card">
 <img src="SAYUR.JPG.jpeg">
 <div class="card-body">
-<h3>🥬 BOTANICA Sayur</h3>
+<h3>🥬 BARoid Sayur</h3>
 <p>Untuk Kangkung, Bayam, Cabai, dll. Cepat panen, sayur segar, aman untuk keluarga.</p>
 <div class="price">Rp 30.000 <small>Rp 45.000</small></div>
-<a class="btn" href="https://wa.me/6281234567890?text=Halo%20BOTANICA,%20saya%20mau%20pesan%20BOTANICA%20Sayur">Pesan Via WA</a>
+<button class="btn" onclick="tambahKeranjang('BARoid Sayur')">🛒 + Keranjang</button>
 </div>
 </div>
 
@@ -87,15 +88,30 @@ footer{background:#111;color:#aaa;text-align:center;padding:20px;font-size:13px}
 <div class="section">
 <div class="why">
 <div><b>✅ Siap Pakai</b>Tidak perlu campur pupuk lagi</div>
-<div><b>🚚 Kirim Cepat</b>Se-Jabodetabek & Seluruh Indonesia</div>
+<div><b>🚚 Kirim Cepat</b>Se-Bogor & Seluruh Indonesia</div>
 <div><b>🌱 100% Organik</b>Aman untuk tanaman & keluarga</div>
 <div><b>💬 Konsultasi Gratis</b>Dibantu sampai tanaman subur</div>
 </div>
 </div>
 
 <footer>
-<b style="color:white">BOTANICA.</b> - Media Tanam Premium<br>WA: 0812-3456-7890 | Depok, Jawa Barat<br>© 2026 BOTANICA. All Rights Reserved.
+<b style="color:white">BARoid.</b> - Media Tanam Premium<br>WA: 0812-3456-7890 | Bogor, Jawa Barat<br>© 2026 BARoid. All Rights Reserved.
 </footer>
+
+<script>
+let cart = 0;
+let items = [];
+function tambahKeranjang(nama){
+  cart++;
+  items.push(nama);
+  document.getElementById('cartCount').innerText = cart;
+  alert(nama + ' ditambahkan ke keranjang! 🛒\nTotal: ' + cart + ' produk');
+}
+function lihatKeranjang(){
+  if(cart==0){ alert('Keranjang masih kosong, yuk pilih produk dulu!'); }
+  else { alert('Isi Keranjang kamu:\n- ' + items.join('\n- ') + '\n\nTotal: ' + cart + ' produk'); }
+}
+</script>
 
 </body>
 </html>
