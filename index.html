@@ -3,106 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BOTANICA - Billietiae Variegata</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<title>BARoid - Media Tanam Premium</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#f5f5f0;color:#222}
-header{background:#123a26;color:white;padding:16px;text-align:center;position:sticky;top:0;z-index:10}
-header h1{letter-spacing:4px;font-size:22px}
-header p{font-size:12px;opacity:.8}
-.hero{padding:16px}
-#canvas3d{width:100%;height:380px;background:radial-gradient(circle at 50% 30%,#e8f5e9,#c8e6c9);border-radius:20px;touch-action:none;cursor:grab}
-.hint{text-align:center;font-size:12px;color:#666;margin-top:8px}
-.card{background:white;margin:16px;padding:20px;border-radius:20px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
-.card h2{font-size:22px}
-.price{font-size:24px;color:#1a7a3a;font-weight:bold;margin:8px 0}
-.badge{display:inline-block;background:#fff3cd;padding:5px 10px;border-radius:20px;font-size:12px}
-.btn{display:block;text-align:center;background:#25D366;color:white;padding:14px;border-radius:12px;text-decoration:none;font-weight:bold;margin-top:12px;font-size:16px}
-.btn2{background:#123a26}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:0 16px 20px}
-.item{background:white;border-radius:16px;overflow:hidden;box-shadow:0 4px 15px rgba(0,0,0,.07)}
-.item img{width:100%;height:170px;object-fit:cover;display:block}
-.item div{padding:10px}
-.item b{font-size:14px}
-.item p{color:#1a7a3a;font-weight:bold;margin-top:4px}
-.item a{display:block;text-align:center;background:#123a26;color:white;padding:8px;border-radius:8px;text-decoration:none;font-size:13px;margin-top:8px}
-.section-title{padding:4px 16px 12px;font-size:18px}
-footer{text-align:center;padding:20px;color:#888;font-size:12px}
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif}
+body{background:#f6fbf4;color:#1a2e1a}
+header{background:#0f2a12;color:#fff;padding:14px 20px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:10}
+.logo{font-size:28px;font-weight:900}.logo span{color:#7ed957}
+nav a{color:#fff;text-decoration:none;margin:0 8px;font-weight:600;font-size:14px}
+.cart-btn{background:#7ed957;color:#0f2a12;border:none;padding:10px 16px;border-radius:999px;font-weight:800;cursor:pointer}
+.hero{background:linear-gradient(135deg,#0f2a12,#1e5a26);color:#fff;padding:50px 20px;text-align:center}
+.hero h1{font-size:40px;line-height:1.15}.hero h1 span{color:#7ed957}
+.hero p{margin:16px auto;max-width:650px;opacity:.9;line-height:1.6}
+.hero-btn{background:#ffb020;color:#111;padding:14px 28px;border-radius:999px;display:inline-block;font-weight:900;text-decoration:none;margin-top:8px}
+.bio{max-width:900px;margin:30px auto;padding:0 20px;text-align:center;line-height:1.7}.bio h2{font-size:28px;margin-bottom:10px}
+.section{max-width:1100px;margin:20px auto;padding:0 20px}.section h2{text-align:center;font-size:32px}.section>p{text-align:center;margin:8px 0 25px;opacity:.7}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.card img{width:100%;height:280px;object-fit:cover;background:#e8f3e2}
+.card-body{padding:20px}.badge{display:inline-block;background:#e8f9e0;color:#2a6b1a;padding:5px 12px;border-radius:999px;font-size:12px;font-weight:800}
+.card-body h3{font-size:22px;margin:10px 0 6px}.card-body ul{margin:10px 0 10px 18px;line-height:1.6;font-size:14px;color:#444}
+.price{font-size:26px;font-weight:900;color:#1e5a26}.price small{font-size:13px;color:#777}
+.qty{display:flex;gap:10px;align-items:center;margin:14px 0}.qty button{width:32px;height:32px;border-radius:50%;border:1px solid #ddd;background:#fff;font-size:18px;cursor:pointer}
+.add{width:100%;background:#0f2a12;color:#fff;border:none;padding:13px;border-radius:12px;font-weight:800;cursor:pointer;font-size:15px}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:15px;margin:30px 0}.why div{background:#fff;padding:20px;border-radius:16px;text-align:center;box-shadow:0 5px 15px rgba(0,0,0,.05)}
+footer{background:#0f2a12;color:#fff;text-align:center;padding:30px 20px;margin-top:40px;line-height:1.7}footer a{color:#7ed957;font-weight:800;text-decoration:none}
+.cart-drawer{position:fixed;right:0;top:0;width:360px;max-width:92vw;height:100%;background:#fff;box-shadow:-10px 0 30px rgba(0,0,0,.2);padding:20px;transform:translateX(110%);transition:.3s;z-index:99;overflow:auto}.cart-drawer.open{transform:none}
+.cart-item{display:flex;justify-content:space-between;padding:12px 0;border-bottom:1px solid #eee;font-size:14px}.total{font-size:22px;font-weight:900;margin:15px 0}
+.wa-btn{display:block;background:#25D366;color:#fff;text-align:center;padding:15px;border-radius:12px;font-weight:900;text-decoration:none}.close{float:right;border:none;background:none;font-size:22px;cursor:pointer}
+@media(max-width:600px){.hero h1{font-size:32px}nav{display:none}}
 </style>
 </head>
 <body>
-<header><h1>BOTANICA</h1><p>Premium Indoor Plants • Bogor</p></header>
-<div class="hero"><div id="canvas3d"></div><p class="hint">👆 Geser untuk putar tanaman 3D • Cubit untuk zoom</p></div>
-<div class="card">
-<span class="badge">⭐ READY STOCK • VARIEGATA</span>
-<h2 id="mainName">Philodendron Billietiae Variegata</h2>
-<p style="color:#666;font-size:13px;margin-top:6px">Daun panjang lancip, tangkai orange, variegata kuning - putih. Tanaman kolektor, indukan sehat.</p>
-<div class="price" id="mainPrice">Rp 185.000</div>
-<p style="font-size:13px">📦 Pot + Media • 🚚 Kirim dari Bogor • ✅ Garansi tanaman sehat sampai</p>
-<a class="btn" id="waMain" href="#" target="_blank">💬 Order via WhatsApp</a>
-<a class="btn btn2" href="#katalog">Lihat Katalog Bawah ↓</a>
-</div>
-<h3 class="section-title" id="katalog">🌿 Katalog Billietiae Variegata</h3>
-<div class="grid" id="grid"></div>
-<footer>BOTANICA • Bogor<br>Edit harga / foto gampang di bagian atas kode</footer>
+<header><div class="logo">BA<span>Roid</span></div><nav><a href="#produk">Produk</a><a href="#tentang">Tentang</a></nav><button class="cart-btn" onclick="toggleCart()">🛒 Keranjang (<span id="cartCount">0</span>)</button></header>
+<div class="hero"><h1>Media Tanam Premium.<br><span>Tanaman Auto Subur.</span></h1><p>BARoid diracik khusus untuk pecinta tanaman. Poros, kaya nutrisi, siap pakai. Tanpa ribet campur-campur lagi, tinggal tuang, tanaman langsung happy.</p><a class="hero-btn" href="#produk">Lihat Produk ↓</a></div>
+<div class="bio" id="tentang"><h2>🌱 Tentang BARoid</h2><p><b>BARoid</b> adalah media tanam premium untuk hias, buah, dan sayur. Kami percaya tanaman sehat berawal dari media yang tepat — tidak terlalu padat, tidak becek, tapi tetap menyimpan nutrisi.</p><p style="margin-top:10px">Setiap kemasan <b>5 KG</b> sudah siap pakai. Cocok untuk pemula sampai kolektor seperti Philodendron, Monstera, Aglaonema, tanaman buah dalam pot, sampai sayur di pekarangan rumah.</p></div>
+<div class="section" id="produk"><h2>Produk Kami</h2><p>Semua 5 KG • Siap Pakai • Langsung Kirim</p><div class="grid">
+<div class="card"><img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=800&q=80" alt="Media Tanam Hias"><div class="card-body"><span class="badge">BEST SELLER • HIAS</span><h3>Media Tanam Hias</h3><p style="font-size:14px;color:#555">Untuk Philodendron, Monstera, Aglaonema, Alocasia & tanaman hias daun.</p><ul><li>Sekam Bakar</li><li>Perlite</li><li>Pakis Cacah</li><li>Andam</li></ul><div class="price">Rp 25.000 <small>/ 5 KG</small></div><div class="qty"><button onclick="changeQty('hias',-1)">-</button><span id="qty-hias">1</span><button onclick="changeQty('hias',1)">+</button></div><button class="add" onclick="addToCart('hias')">+ Masukin Keranjang</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80" alt="Media Tanam Buah"><div class="card-body"><span class="badge" style="background:#ffeed6;color:#9a4a00">BUAH</span><h3>Media Tanam Buah</h3><p style="font-size:14px;color:#555">Untuk tabulampot, jambu, jeruk, mangga, anggur & tanaman buah lainnya.</p><ul><li>Sekam Bakar</li><li>Pupuk Kandang</li><li>Humus</li></ul><div class="price">Rp 20.000 <small>/ 5 KG</small></div><div class="qty"><button onclick="changeQty('buah',-1)">-</button><span id="qty-buah">1</span><button onclick="changeQty('buah',1)">+</button></div><button class="add" onclick="addToCart('buah')">+ Masukin Keranjang</button></div></div>
+<div class="card"><img src="https://images.unsplash.com/photo-1592982537447-7440770cbfc9?w=800&q=80" alt="Media Tanam Sayur"><div class="card-body"><span class="badge">SAYUR • HEMAT</span><h3>Media Tanam Sayur</h3><p style="font-size:14px;color:#555">Untuk cabai, tomat, kangkung, bayam, selada & sayur pekarangan.</p><ul><li>Top Soil</li><li>Sekam Bakar</li><li>Pupuk Kandang</li></ul><div class="price">Rp 15.000 <small>/ 5 KG</small></div><div class="qty"><button onclick="changeQty('sayur',-1)">-</button><span id="qty-sayur">1</span><button onclick="changeQty('sayur',1)">+</button></div><button class="add" onclick="addToCart('sayur')">+ Masukin Keranjang</button></div></div>
+</div><div class="why"><div>✅<br><strong>Siap Pakai</strong><br>Tinggal tuang, langsung tanam</div><div>🌿<br><strong>Poros & Gembur</strong><br>Akar sehat, anti busuk akar</div><div>💪<br><strong>Kaya Nutrisi</strong><br>Daun lebat, buah lebat</div><div>📦<br><strong>5 KG Pas</strong><br>Pas buat 2-3 pot ukuran sedang</div></div></div>
+<div class="cart-drawer" id="cartDrawer"><button class="close" onclick="toggleCart()">✕</button><h2>Keranjang Kamu</h2><div id="cartItems" style="margin-top:15px"><p style="opacity:.6">Keranjang masih kosong met, pilih dulu yuk.</p></div><div class="total" id="cartTotal"></div><a class="wa-btn" id="waBtn" href="#" target="_blank" style="display:none">Pesan Lewat WA →</a><p style="font-size:12px;margin-top:10px;opacity:.6">Klik tombol di atas, pesanan otomatis masuk ke WhatsApp BARoid.</p></div>
+<footer><h2 style="font-size:26px">BA<span style="color:#7ed957">Roid</span></h2><p>Media Tanam Premium • Hias • Buah • Sayur<br>Depok, Jawa Barat - Indonesia</p><p style="margin-top:10px">Order via WhatsApp: <a href="https://wa.me/6281285504053">0812-8550-4053</a></p><p style="opacity:.6;font-size:13px;margin-top:10px">© 2026 BARoid. Tanam Hari Ini, Panen Bahagia Nanti.</p></footer>
 <script>
-const CONFIG = {
-  noWA: "081285504053",
-  namaUtama: "Philodendron Billietiae Variegata",
-  hargaUtama: "Rp 385.000",
-  katalog: [
-    { nama: "Billietiae Variegata - Indukan", harga: "Rp 385.000", foto: "https://siamplantes.com/cdn/shop/files/philodendron-billietiae-variegated-4.jpg?v=1775824834" },
-    { nama: "Billietiae Variegata - Full Moon", harga: "Rp 250.000", foto: "https://www.picclickimg.com/DzsAAOSwtclm3v-z/Philodendron-Billietiae-variegato-n-4.webp" },
-    { nama: "Billietiae Variegata - Anakan", harga: "Rp 150.000", foto: "https://siamplantes.com/cdn/shop/files/philodendron-billietiae-variegated-2.jpg?v=1775824808" },
-    { nama: "Billietiae Variegata - Marble", harga: "Rp 175.000", foto: "https://static.mercdn.net/item/detail/webp/photos/m15716646046_1.jpg" },
-  ]
-};
-document.getElementById('mainName').innerText = CONFIG.namaUtama;
-document.getElementById('mainPrice').innerText = CONFIG.hargaUtama;
-document.getElementById('waMain').href = "https://wa.me/" + CONFIG.noWA + "?text=" + encodeURIComponent("Halo BOTANICA, saya mau order " + CONFIG.namaUtama + " " + CONFIG.hargaUtama);
-const grid = document.getElementById('grid');
-CONFIG.katalog.forEach(p => {
-  const wa = "https://wa.me/" + CONFIG.noWA + "?text=" + encodeURIComponent("Halo, saya mau order " + p.nama + " " + p.harga);
-  grid.innerHTML += `<div class="item"><img src="${p.foto}"><div><b>${p.nama}</b><p>${p.harga}</p><a href="${wa}" target="_blank">Order WA</a></div></div>`;
-});
-const container = document.getElementById('canvas3d');
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(45, container.clientWidth/380, 0.1, 100);
-camera.position.set(0, 2.2, 6);
-const renderer = new THREE.WebGLRenderer({antialias:true, alpha:true});
-renderer.setSize(container.clientWidth, 380);
-container.appendChild(renderer.domElement);
-scene.add(new THREE.AmbientLight(0xffffff, 0.9));
-const light = new THREE.DirectionalLight(0xffffff, 0.8);
-light.position.set(2,5,3); scene.add(light);
-const plant = new THREE.Group(); scene.add(plant);
-const pot = new THREE.Mesh(new THREE.CylinderGeometry(0.9, 0.7, 1, 24), new THREE.MeshStandardMaterial({color:0x8d6e63}));
-pot.position.y = -0.9; plant.add(pot);
-const soil = new THREE.Mesh(new THREE.CylinderGeometry(0.85,0.85,0.1,24), new THREE.MeshStandardMaterial({color:0x3e2723}));
-soil.position.y = -0.35; plant.add(soil);
-const leafColors = [0x2e8b57, 0x7fb069, 0xd9e021, 0xf5f5dc, 0x2e8b57, 0xa8d26d, 0xd9e021, 0x2e8b57, 0xf5f5dc];
-for(let i=0;i<9;i++){
-  const angle = i * 0.7;
-  const stem = new THREE.Mesh(new THREE.CylinderGeometry(0.05,0.07,1.8,8), new THREE.MeshStandardMaterial({color:0xe67e22}));
-  stem.position.set(Math.cos(angle)*0.3, 0.4, Math.sin(angle)*0.3);
-  stem.rotation.z = Math.cos(angle)*0.55; stem.rotation.x = -Math.sin(angle)*0.55; plant.add(stem);
-  const shape = new THREE.Shape();
-  shape.moveTo(0,0); shape.bezierCurveTo(-0.45,0.9,-0.4,2.3,0,3.3); shape.bezierCurveTo(0.4,2.3,0.45,0.9,0,0);
-  const leaf = new THREE.Mesh(new THREE.ShapeGeometry(shape, 16), new THREE.MeshStandardMaterial({color:leafColors[i], side:THREE.DoubleSide, roughness:0.45}));
-  leaf.position.set(Math.cos(angle)*0.7, 1.1, Math.sin(angle)*0.7); leaf.rotation.set(-0.35 + (i%3)*0.2, angle, 0.25); plant.add(leaf);
-  const spot = new THREE.Mesh(new THREE.CircleGeometry(0.18, 12), new THREE.MeshBasicMaterial({color:0xfff9c4, transparent:true, opacity:0.85, side:THREE.DoubleSide}));
-  spot.position.set(Math.cos(angle)*0.7 + 0.1, 1.8 + (i%2)*0.4, Math.sin(angle)*0.7 + 0.02); spot.rotation.set(-0.35, angle, 0); plant.add(spot);
-}
-let isDown=false, prevX=0, prevY=0;
-function start(e){isDown=true; prevX=e.clientX||e.touches[0].clientX; prevY=e.clientY||e.touches[0].clientY;}
-function move(e){if(!isDown) return; const x=e.clientX||e.touches[0].clientX; const y=e.clientY||e.touches[0].clientY; plant.rotation.y += (x-prevX)*0.01; plant.rotation.x += (y-prevY)*0.005; prevX=x; prevY=y;}
-function end(){isDown=false;}
-renderer.domElement.addEventListener('mousedown',start);
-window.addEventListener('mousemove',move); window.addEventListener('mouseup',end);
-renderer.domElement.addEventListener('touchstart',start);
-window.addEventListener('touchmove',move); window.addEventListener('touchend',end);
-function animate(){requestAnimationFrame(animate); if(!isDown) plant.rotation.y += 0.003; renderer.render(scene,camera);} animate();
+const products={hias:{name:"Media Tanam Hias",price:25000,qty:1},buah:{name:"Media Tanam Buah",price:20000,qty:1},sayur:{name:"Media Tanam Sayur",price:15000,qty:1}};
+let cart={};
+function changeQty(id,d){products[id].qty=Math.max(1,products[id].qty+d);document.getElementById('qty-'+id).innerText=products[id].qty;}
+function addToCart(id){cart[id]=(cart[id]||0)+products[id].qty;renderCart();toggleCart(true);}
+function renderCart(){let html="",total=0,count=0,msg="Halo BARoid! Saya mau pesan:%0A%0A";for(let id in cart){let p=products[id],sub=p.price*cart[id];total+=sub;count+=cart[id];html+=`<div class="cart-item"><span>${p.name} x ${cart[id]}</span><b>Rp ${sub.toLocaleString('id-ID')}</b></div>`;msg+=`- ${p.name} x ${cart[id]} = Rp ${sub.toLocaleString('id-ID')}%0A`;}if(count===0)html=`<p style="opacity:.6">Keranjang masih kosong met.</p>`;document.getElementById('cartItems').innerHTML=html;document.getElementById('cartCount').innerText=count;document.getElementById('cartTotal').innerText=count?`Total: Rp ${total.toLocaleString('id-ID')}`:"";let wa=document.getElementById('waBtn');if(count){wa.style.display='block';msg+=`%0ATotal: Rp ${total.toLocaleString('id-ID')}%0A%0AAlamat saya:`;wa.href=`https://wa.me/6281285504053?text=${msg}`;}else wa.style.display='none';}
+function toggleCart(open){let d=document.getElementById('cartDrawer');if(open===true)d.classList.add('open');else d.classList.toggle('open');}
 </script>
 </body>
 </html>
