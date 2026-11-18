@@ -146,7 +146,7 @@ function lihatKeranjang(){
 
 <div class="baroid-box" id="order">
 <h2>🛒 Form Order BARoid</h2>
-<form name="order-baroid" method="POST" data-netlify="true">
+<form name="order-baroid" onsubmit="return false;">
 <input type="hidden" name="form-name" value="order-baroid">
 <input type="text" name="nama" placeholder="Nama Pemesan" required>
 <input type="text" name="wa" placeholder="No WA 08xx..." required>
@@ -164,7 +164,7 @@ function lihatKeranjang(){
 
 <div class="baroid-box" id="ulasan">
 <h2>⭐ Ulasan Pembeli BARoid</h2>
-<form name="ulasan-baroid" method="POST" data-netlify="true">
+<form name="ulasan-baroid" onsubmit="return false;">
 <input type="hidden" name="form-name" value="ulasan-baroid">
 <input type="text" name="nama" placeholder="Nama Kamu" required>
 <select name="bintang">
