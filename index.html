@@ -129,6 +129,63 @@ function lihatKeranjang(){
   else { alert('Isi Keranjang kamu:\n- ' + items.join('\n- ') + '\n\nTotal: ' + cart + ' produk'); }
 }
 </script>
+<!-- ===== TAMBAHAN BAROID: LOGIN + FORM + ULASAN ===== -->
+<style>
+.baroid-box{background:#fff;padding:25px;border-radius:16px;margin:30px auto;max-width:800px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+.baroid-box h2{color:#1a3c2a;margin-top:0}
+.baroid-box input,.baroid-box select,.baroid-box textarea{width:100%;padding:12px;margin:8px 0;border:1px solid #ccc;border-radius:10px;box-sizing:border-box}
+.baroid-box button{background:#1a3c2a;color:#fff;border:none;padding:13px;width:100%;border-radius:10px;font-weight:bold;cursor:pointer}
+.baroid-login{text-align:center;margin:20px}
+.baroid-login button{width:auto;padding:10px 25px;background:#1a3c2a;color:#fff;border:none;border-radius:20px;font-weight:bold;cursor:pointer}
+</style>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
+<div class="baroid-login" id="login-area">
+<button onclick="netlifyIdentity.open()">Login / Daftar Akun</button>
+</div>
+
+<div class="baroid-box" id="order">
+<h2>🛒 Form Order BARoid</h2>
+<form name="order-baroid" method="POST" data-netlify="true">
+<input type="hidden" name="form-name" value="order-baroid">
+<input type="text" name="nama" placeholder="Nama Pemesan" required>
+<input type="text" name="wa" placeholder="No WA 08xx..." required>
+<textarea name="alamat" placeholder="Alamat Lengkap" required></textarea>
+<select name="produk">
+<option>BARoid Media Tanam Hias</option>
+<option>BARoid Media Tanam Buah</option>
+<option>BARoid Media Tanam Sayur</option>
+<option>BARoid Substrate</option>
+</select>
+<input type="number" name="jumlah" value="1" min="1">
+<button type="submit">PESAN SEKARANG</button>
+</form>
+</div>
+
+<div class="baroid-box" id="ulasan">
+<h2>⭐ Ulasan Pembeli BARoid</h2>
+<form name="ulasan-baroid" method="POST" data-netlify="true">
+<input type="hidden" name="form-name" value="ulasan-baroid">
+<input type="text" name="nama" placeholder="Nama Kamu" required>
+<select name="bintang">
+<option>⭐⭐⭐⭐⭐ Sangat Puas</option>
+<option>⭐⭐⭐⭐ Puas</option>
+<option>⭐⭐⭐ Biasa</option>
+<option>⭐⭐ Kurang</option>
+<option>⭐ Kecewa</option>
+</select>
+<textarea name="ulasan" placeholder="Gimana media tanam BARoid-nya?" required></textarea>
+<button type="submit">KIRIM ULASAN</button>
+</form>
+</div>
+
+<script>
+if(window.netlifyIdentity){
+  netlifyIdentity.on("init", user => {
+    if(user) document.getElementById('login-area').innerHTML = 'Halo, '+user.email+' <button onclick="netlifyIdentity.logout()">Logout</button>';
+  });
+}
+</script>
+<!-- ===== SELESAI TAMBAHAN ===== -->
 </body>
 </html>
